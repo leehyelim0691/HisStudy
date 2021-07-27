@@ -27,6 +27,12 @@ import ProductValues from './views/ProductValues';
 import ProductHowItWorks from './views/ProductHowItWorks';
 import ProductCTA from './views/ProductCTA';
 import AppAppBar from './views/AppAppBar';
+import {
+  Route,
+  Switch,
+  Redirect,
+  BrowserRouter as Router
+} from "react-router-dom";
 
 function App() {
   return (
@@ -52,6 +58,22 @@ function App() {
       <ProductSmokingHero />
       <AppFooter />
     </React.Fragment>
+
+/* <div className="App">
+<Router>
+  <AppAppBar/>
+  <ProductHero/>
+  <Switch>
+    <Route exact path="/productvalues" component={ProductValues} />
+    <Route exact path="/productcategories" component={ProductCategories} />
+    <Route exact path="/producthowitworks" component={ProductHowItWorks} />
+    <Route exact path="/productcta" component={ProductCTA} />
+    <Route exact path="/productsmokinghero" component={ProductSmokingHero} />
+    <Route exact path="/appfooter" component={AppFooter} />
+    <Redirect to="/" />
+  </Switch>
+</Router>
+</div> */
   );
 }
 

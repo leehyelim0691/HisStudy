@@ -6,7 +6,7 @@ import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 import { BrowserRouter as Router, Route } from 'react-router-dom'; 
-
+import SignIn from './../SignIn';
 
 
 
@@ -64,6 +64,7 @@ function AppAppBar(props) {
               className={classes.rightLink}
               href="./../sign-in/"
             >
+         
               {'Sign In'}
             </Link>
             <Link
