@@ -1,9 +1,20 @@
 import 'react-router-dom'
+import React from "react";
+
 import BBS from './bbs.js';
 import { Link, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 export default function main() {
+//     const [toggle, setToggle] = React.useState(false);
+
+//   function handleDrawerToggle() {
+//     setToggle(t => !t);
+//   }
     return(
         
+
         <div className="main">
             <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -41,12 +52,22 @@ export default function main() {
                         <h2 class="text-white mt-0">BulletinBoard</h2>
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                        <Router>
+                        {/* <Router>
                             <Route path="/bbs" component={BBS} />
-                            <Link to="/bbs">
-                            <button>About</button>
-                            </Link>
-                        </Router>
+                            <Link to="/bbs"> */}
+                            <ListItem
+              button
+              component={Link}
+              to="/bbs"
+            //   onClick={handleDrawerToggle}
+            >
+            
+              <ListItemText primary="AIM_KOREA_M" />
+            </ListItem>
+
+                            {/* <button>About</button> */}
+                            {/* </Link>
+                        </Router> */}
                     </div>
                 </div>
             </div>
