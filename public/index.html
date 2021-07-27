@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <title>HisStudy</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    
+  </body>
+  <script>
+    window.addEventListener('DOMContentLoaded', event => {
+
+const sidebarWrapper = document.getElementById('sidebar-wrapper');
+let scrollToTopVisible = false;
+// Closes the sidebar menu
+const menuToggle = document.body.querySelector('.menu-toggle');
+menuToggle.addEventListener('click', event => {
+    event.preventDefault();
+    sidebarWrapper.classList.toggle('active');
+    _toggleMenuIcon();
+    menuToggle.classList.toggle('active');
+})
+
+// Closes responsive menu when a scroll trigger link is clicked
+var scrollTriggerList = [].slice.call(document.querySelectorAll('#sidebar-wrapper .js-scroll-trigger'));
+scrollTriggerList.map(scrollTrigger => {
+    scrollTrigger.addEventListener('click', () => {
+        sidebarWrapper.classList.remove('active');
+        menuToggle.classList.remove('active');
+        _toggleMenuIcon();
+    })
+});
+
+function _toggleMenuIcon() {
+    const menuToggleBars = document.body.querySelector('.menu-toggle > .fa-bars');
+    const menuToggleTimes = document.body.querySelector('.menu-toggle > .fa-times');
+    if (menuToggleBars) {
+        menuToggleBars.classList.remove('fa-bars');
+        menuToggleBars.classList.add('fa-times');
+    }
+    if (menuToggleTimes) {
+        menuToggleTimes.classList.remove('fa-times');
+        menuToggleTimes.classList.add('fa-bars');
+    }
+}
+
+// Scroll to top button appear
+document.addEventListener('scroll', () => {
+    const scrollToTop = document.body.querySelector('.scroll-to-top');
+    if (document.documentElement.scrollTop > 100) {
+        if (!scrollToTopVisible) {
+            fadeIn(scrollToTop);
+            scrollToTopVisible = true;
+        }
+    } else {
+        if (scrollToTopVisible) {
+            fadeOut(scrollToTop);
+            scrollToTopVisible = false;
+        }
+    }
+})
+})
+
+function fadeOut(el) {
+el.style.opacity = 1;
+(function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+        el.style.display = "none";
+    } else {
+        requestAnimationFrame(fade);
+    }
+})();
+};
+
+function fadeIn(el, display) {
+el.style.opacity = 0;
+el.style.display = display || "block";
+(function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+        el.style.opacity = val;
+        requestAnimationFrame(fade);
+    }
+})();
+};
+    </script>
+</html>
