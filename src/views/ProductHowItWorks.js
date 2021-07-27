@@ -5,6 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
+import {Route, Switch,Redirect, Link,BrowserRouter as Router} from "react-router-dom";
+import Bbs from './Bbs';
+
 
 const styles = (theme) => ({
   root: {
@@ -109,16 +112,16 @@ function ProductHowItWorks(props) {
             </Grid>
           </Grid>
         </div>
-        <Button
-          color="secondary"
-          size="large"
-          variant="contained"
-          className={classes.button}
-          component="a"
-          href="/premium-themes/onepirate/sign-up/"
-        >
-          Get started
-        </Button>
+        <div>
+      <ul>
+        <li>
+          <Link to="/Bbs"><Button> 이동하기 </Button></Link>
+        </li>
+      </ul>
+      <hr />
+      <Route path="" exact/>
+      <Route path="/Bbs" component={Bbs} />
+    </div>
       </Container>
     </section>
   );
