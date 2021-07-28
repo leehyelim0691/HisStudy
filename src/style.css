@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;   
+   }
+   
+   a {
+       text-decoration: none;
+       color: inherit;
+   }
+   .memberMenu {
+       width: 1050px;
+       height: 37px;
+       margin: 0 234.6px 0 234.6px;
+       display: flex;
+       flex-direction: row;
+   }
+   .list_Menu {
+       width: 195.15px;
+       height: 37px;
+       margin: 0 0 0 724.85px;
+       padding: 0;
+       display: flex;
+       flex-direction: row;
+       font-size: 11px;
+       font-weight: 700;
+       list-style: none;
+   }
+   .signUp {
+       width: 64.96px;
+       color: rgb(5, 5, 5);
+       text-align: center;
+       padding-top: 10px;
+       cursor: pointer;
+   }
+   .signUp::after {
+       width: 1px;
+       height: 14px;
+       content: "";
+       float: right;
+       background-color: rgb(216, 216, 216);
+   }
+   .logIn {
+       width: 64.225px;
+       text-align: center;
+       padding-top: 10px;
+       cursor: pointer;
+   }
+   .logIn::after {
+       width: 1px;
+       height: 14px;
+       content: "";
+       float: right;
+       background-color: rgb(216, 216, 216);
+   }
+   .customer {
+       width: 65.963px;
+       text-align: center;
+       padding: 10px 0 0 0;
+       position: relative;
+       display: inline-block;
+       cursor: pointer;
+   }
+   .customer::after {
+       width: 8px;
+       height: 5px;
+       content: "";
+       background-image: url("https://res.kurly.com/pc/ico/1908/ico_down_8x5.png");
+       position: absolute;
+       background-repeat: no-repeat;
+       top: 16px;
+       margin-left: 2px;
+   }
+   .sub_Menu {
+       display: none;
+       position: absolute;
+       list-style: none;
+       font-size: 11px;
+       background-color: #fff;
+       border: 1px solid #ddd;
+       width: 86px;
+       padding: 3px 9px 3px 9px;
+       z-index: 1;
+       top: 34px;
+       left: -40px;
+       text-align: left;
+   }
+   .sub_text {
+       padding: 5px 2px 5px 2px;
+   }
+   .customer:hover .sub_Menu {
+       display: block;
+   }
+   .head {
+       width: 1050px;
+       height: 63px;
+       margin: 0 234.6px 0 234.6px;
+       text-align: center;
+   }
+   .logo {
+       width: 103px;
+       height: 100px;
+       margin: -5px 48.5px 0 48.5px;
+       cursor: pointer;
+   }
+   
+   .board_list_wrap {
+       padding: 300px;
+   }
+   
+   
+   
+   .board_list_head,
+   .board_list_body .item{
+       font-size: 0;
+       padding: 10px 0;
+   }
+   
+   .board_list_head{
+       border-top: 2px solid rgb(12, 12, 12);
+       border-bottom: 1px solid #ccc;
+   }
+   
+   .board_list_body .item{
+       border-bottom: 1px solid #ccc;
+   }
+   
+   .board_list_head > div,
+   .board_list_body .item > div {
+       display: inline-block;
+       text-align: center;
+       font-size: 14px;
+   }
+   
+   .board_list_head > div {
+       font-weight: 600;
+   }
+   
+   .board_list .num {
+       width : 10%;
+   }
+   .board_list .tit {
+       width : 55%;
+   }
+   .board_list_body .tit {
+       text-align: left;
+   }
+   .board_list_body div.tit a:hover  {
+       text-decoration: underline;
+   }
+   .board_list .writer {
+       width : 10%;
+   }
+   .board_list .date {
+       width : 15%;
+   }
+   .board_list .view {
+       width : 10%;
+   }
+   
+   
+   .paging {
+       margin-top: 30px;
+       text-align: center;
+   }
+   .paging a{
+       display: inline-block;
+       vertical-align: middle;
+   }
+   
+   .paginga.bt{
+       width: 30px;
+       height:30px;
+       background-color: #ccc;
+       background-repeat: no-repeat;
+       border-radius: 100px;
+       text-indent: -1000px;
+       overflow: hidden;
+   }
+   
+   .paging a.bt:hover {
+       text-decoration: underline;
+   }
+   
+   .paging a.first{
+       background-position: 10px -40px;
+   }
+   
+   .paging a.prev{
+       margin-right: 5px;
+       background-position: 10px 10px;
+   }
+   
+   .paging a.next {
+       margin-left: 5px;
+       background-position: -40px 10px ;
+   }
+   
+   .paging a.last{
+       background-position: -40px -40px;
+   }
+   
+   .paging a.num{
+       margin: 0 5px;
+   }
+   
+   .paging a.num:hover{
+       text-decoration: underline;
+   }

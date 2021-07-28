@@ -29,7 +29,6 @@ import ProductCTA from './views/ProductCTA';
 import AppAppBar from './views/AppAppBar';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import SignHi from './SignHi';
 import Bbs from './Bbs';
 import Terms from './Terms';
 import {
