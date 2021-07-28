@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 import {Route, Switch,Redirect, Link,BrowserRouter as Router} from "react-router-dom";
-import Bbs from './Bbs';
+import Bbs from '../Bbs';
 
 
 const styles = (theme) => ({
@@ -60,24 +60,24 @@ function ProductHowItWorks(props) {
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
-        <img
+        {/* <img
           src="/static/themes/onepirate/productCurvyLines.png"
           className={classes.curvyLines}
           alt="curvy lines"
-        />
+        /> */}
         <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          How it works
+          Ranking
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <div className={classes.number}>1.</div>
-                <img
+                {/* <img
                   src="/static/themes/onepirate/productHowItWorks1.svg"
                   alt="suitcase"
                   className={classes.image}
-                />
+                /> */}
                 <Typography variant="h5" align="center">
                   Appointment every Wednesday 9am.
                 </Typography>
@@ -86,11 +86,11 @@ function ProductHowItWorks(props) {
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <div className={classes.number}>2.</div>
-                <img
+                {/* <img
                   src="/static/themes/onepirate/productHowItWorks2.svg"
                   alt="graph"
                   className={classes.image}
-                />
+                /> */}
                 <Typography variant="h5" align="center">
                   First come, first served. Our offers are in limited quantities, so be quick.
                 </Typography>
@@ -99,11 +99,11 @@ function ProductHowItWorks(props) {
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <div className={classes.number}>3.</div>
-                <img
+                {/* <img
                   src="/static/themes/onepirate/productHowItWorks3.svg"
                   alt="clock"
                   className={classes.image}
-                />
+                /> */}
                 <Typography variant="h5" align="center">
                   {'New offers every week. New experiences, new surprises. '}
                   {'Your Sundays will no longer be alike.'}
@@ -112,16 +112,16 @@ function ProductHowItWorks(props) {
             </Grid>
           </Grid>
         </div>
-        <div>
-      <ul>
-        <li>
-          <Link to="/Bbs"><Button> 이동하기 </Button></Link>
-        </li>
-      </ul>
-      <hr />
-      <Route path="" exact/>
-      <Route path="/Bbs" component={Bbs} />
-    </div>
+        <Button
+          color="secondary"
+          size="large"
+          variant="contained"
+          className={classes.button}
+          component="a"
+          href="/signup"
+        >
+          Get started
+        </Button>
       </Container>
     </section>
   );

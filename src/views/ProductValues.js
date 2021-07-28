@@ -43,19 +43,19 @@ function ProductValues(props) {
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
-        <img
-          src="/static/themes/onepirate/productCurvyLines.png"
+        {/* <img
+          src="./../assets/img/productCurvyLines.png"
           className={classes.curvyLines}
           alt="curvy lines"
-        />
+        /> */}
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
+              {/* <img
                 className={classes.image}
                 src="/static/themes/onepirate/productValues1.svg"
                 alt="suitcase"
-              />
+              /> */}
               <Typography variant="h6" className={classes.title}>
                 Study
               </Typography>
@@ -67,11 +67,11 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
+              {/* <img
                 className={classes.image}
                 src="/static/themes/onepirate/productValues2.svg"
                 alt="graph"
-              />
+              /> */}
               <Typography variant="h6" className={classes.title}>
                 Ranking
               </Typography>
@@ -83,11 +83,11 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
+              {/* <img
                 className={classes.image}
                 src="/static/themes/onepirate/productValues3.svg"
                 alt="clock"
-              />
+              /> */}
               <Typography variant="h6" className={classes.title}>
                 Chatting
               </Typography>

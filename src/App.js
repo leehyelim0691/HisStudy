@@ -27,7 +27,9 @@ import ProductValues from './views/ProductValues';
 import ProductHowItWorks from './views/ProductHowItWorks';
 import ProductCTA from './views/ProductCTA';
 import AppAppBar from './views/AppAppBar';
-import Bbs from './views/Bbs';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Bbs from './Bbs';
 import {
   Route,
   Switch,
@@ -49,40 +51,79 @@ function App() {
     //   </Router>
     //   <Main/>    
     // </div>
-<BrowserRouter>
-  <Switch>
-    <React.Fragment>
-      <Route exact path="/">
-      <AppAppBar />
-      <ProductHero />
-      <ProductValues />
-      <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
-      <ProductSmokingHero />
-      <AppFooter />
-      </Route>
-    </React.Fragment>
-    <Route exact path="/Bbs">
-      <Bbs />
-    </Route>
-  </Switch>
-</BrowserRouter>
-/* <div className="App">
+
+
+//  <BrowserRouter>
+//   <Switch>
+//     <React.Fragment>
+//       <Route exact path="/">
+//       <AppAppBar />
+//       <ProductHero />
+//       <ProductValues />
+//       <ProductCategories />
+//       <ProductHowItWorks />
+//       <ProductCTA />
+//       <ProductSmokingHero />
+//       <AppFooter />
+//       </Route>
+//     </React.Fragment>
+//     <Route exact path="/Bbs">
+//       <Bbs />
+//     </Route>
+//   </Switch>
+// </BrowserRouter> 
+
+
+
 <Router>
-  <AppAppBar/>
-  <ProductHero/>
-  <Switch>
-    <Route exact path="/productvalues" component={ProductValues} />
-    <Route exact path="/productcategories" component={ProductCategories} />
-    <Route exact path="/producthowitworks" component={ProductHowItWorks} />
-    <Route exact path="/productcta" component={ProductCTA} />
-    <Route exact path="/productsmokinghero" component={ProductSmokingHero} />
-    <Route exact path="/appfooter" component={AppFooter} />
-    <Redirect to="/" />
-  </Switch>
+  <div className="App">
+    <AppAppBar/>
+    <Switch>
+      <Route path="/" exact>
+        <ProductHero/>
+          <Switch>
+            <Route path="/bbs">
+              <Bbs/>
+            </Route>
+          </Switch>
+        <ProductValues />
+        <ProductCategories />
+        <ProductHowItWorks />
+          <Switch>
+            <Route path="/signup">
+              <SignIn/>
+            </Route>
+          </Switch>
+        <ProductCTA />
+        <ProductSmokingHero />
+        <AppFooter />
+      </Route>
+      <Route path="/signin">
+        <SignIn/>
+      </Route>
+      <Route path="/signup">
+        <SignUp/>
+      </Route>
+    </Switch>
+    </div> 
 </Router>
-</div> */
+     
+    /* <ProductHero/>
+    <Switch>
+      <Route exact path="/productvalues" component={ProductValues} />
+      <Route exact path="/productcategories" component={ProductCategories} />
+      <Route exact path="/producthowitworks" component={ProductHowItWorks} />
+      <Route exact path="/productcta" component={ProductCTA} />
+      <Route exact path="/productsmokinghero" component={ProductSmokingHero} />
+      <Route exact path="/appfooter" component={AppFooter} />
+      <Redirect to="/" />
+    </Switch> */
+  
+
+
+
+/* <Router> <Route path='/' component={SignPage} /> <Route path='/main' component={MainPage} /> <Route path='/profile' component={ProfilePage} /> </Router> */
+
   );
 }
 
