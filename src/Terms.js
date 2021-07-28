@@ -1,4 +1,4 @@
-import withRoot from './modules/withRoot';
+import withRoot from './withRoot';
 // --- Post bootstrap -----
 import React from 'react';
 import Container from '@material-ui/core/Container';

@@ -112,7 +112,7 @@ function ProductHowItWorks(props) {
             </Grid>
           </Grid>
         </div>
-        <Button
+        {/* <Button
           color="secondary"
           size="large"
           variant="contained"
@@ -121,7 +121,7 @@ function ProductHowItWorks(props) {
           href="/signup"
         >
           Get started
-        </Button>
+        </Button> */}
       </Container>
     </section>
   );

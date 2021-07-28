@@ -70,10 +70,18 @@ function AppAppBar(props) {
             <Link
               variant="h6"
               underline="none"
-              className={clsx(classes.rightLink, classes.linkSecondary)}
+              className={classes.rightLink}
               href="/signup"
             >
               {'Sign Up'}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              className={clsx(classes.rightLink, classes.linkSecondary)}
+              href="/bbs"
+            >
+              {'Board'}
             </Link>
           </div>
         </Toolbar>

@@ -49,7 +49,7 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         component="a"
-        href="/bbs"
+        href="/signup"
       >
         Start
       </Button>
