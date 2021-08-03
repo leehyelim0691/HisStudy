@@ -46,7 +46,7 @@ const Bbs = props => {
                 </div>
                 <div class="item">
                     <div class = "num">1</div>
-                    <div class = "tit"><a href="#">"심리학계론 스터디 구합니다."</a></div>
+                    <div class = "tit"><a href="#">"심리학개론 스터디 구합니다."</a></div>
                     <div class  = "writer">22000630</div>
                     <div class = "date">2021-8-12</div>
                     <div class = "view">27</div>

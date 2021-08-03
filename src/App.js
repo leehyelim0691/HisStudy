@@ -19,13 +19,13 @@
 import withRoot from './withRoot';
 // --- Post bootstrap -----
 import React from 'react';
-import ProductCategories from './views/ProductCategories';
-import ProductSmokingHero from './views/ProductSmokingHero';
+import MainMajor from './views/MainMajor';
+import MainQuestion from './views/MainQuestion';
 import AppFooter from './views/AppFooter';
-import ProductHero from './views/ProductHero';
-import ProductValues from './views/ProductValues';
-import ProductHowItWorks from './views/ProductHowItWorks';
-import ProductCTA from './views/ProductCTA';
+import MainPage from './views/MainPage';
+import MainFunction from './views/MainFunction';
+import MainRanking from './views/MainRanking';
+import MainOffer from './views/MainOffer';
 import AppAppBar from './views/AppAppBar';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
@@ -48,22 +48,22 @@ function App() {
         <AppAppBar/>
         <Switch>
           <Route path="/" exact>
-            <ProductHero/>
+            <MainPage/>
             <Switch>
                 <Route path="/signup">
                   <SignUp/>
                 </Route>
               </Switch>
-            <ProductValues />
-            <ProductCategories />
-            <ProductHowItWorks />
+            <MainFunction />
+            <MainMajor />
+            <MainRanking />
               <Switch>
                 <Route path="/signup">
                   <SignIn/>
                 </Route>
               </Switch>
-            <ProductCTA />
-            <ProductSmokingHero />
+            <MainQuestion />
+            <MainOffer />
             <AppFooter />
           </Route>
           <Route path="/signin">
