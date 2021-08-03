@@ -5,6 +5,8 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
+import Avatar from '@material-ui/core/Avatar';
+
 
 function Copyright() {
   return (
@@ -59,18 +61,18 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     width: 150,
   },
+  root1: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  avatar: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
 }));
 
-const LANGUAGES = [
-  {
-    code: 'en-US',
-    name: 'English',
-  },
-  {
-    code: 'fr-FR',
-    name: 'Français',
-  },
-];
 
 export default function AppFooter() {
   const classes = useStyles();
@@ -102,16 +104,22 @@ export default function AppFooter() {
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Legal
+              Created By
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
+            {/* <ul className={classes.list}> */}
+              {/* <li className={classes.listItem}>
                 <Link href="/premium-themes/onepirate/terms/">Terms</Link>
               </li>
               <li className={classes.listItem}>
                 <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
-              </li>
-            </ul>
+              </li> */}
+              <div className={classes.root1}>
+                <Avatar alt="Remy Sharp" src="https://ifh.cc/g/PMXpMI.jpg" className={classes.avatar}/>
+                <Avatar alt="Remy Sharp" src="https://ifh.cc/g/Nwz1r7.jpg" className={classes.avatar}/>
+                <Avatar alt="Remy Sharp" src="https://ifh.cc/g/NYGhCG.jpg" className={classes.avatar}/>
+                <Avatar alt="Remy Sharp" src="https://ifh.cc/g/whBa3O.jpg" className={classes.avatar}/>
+              </div>
+            {/* </ul> */}
           </Grid>
           {/* <Grid item xs={6} sm={8} md={4}>
             <Typography variant="h6" marked="left" gutterBottom>

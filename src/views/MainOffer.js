@@ -59,8 +59,9 @@ const styles = (theme) => ({
     left: -28,
     right: 0,
     bottom: 0,
-    width: '100%',
+    width: '70%',
     maxWidth: 600,
+    marginLeft:200,
   },
 });
 
@@ -102,14 +103,14 @@ function ProductCTA(props) {
           </div>
         </Grid>
         <Grid item xs={12} md={6} className={classes.imagesWrapper}>
-          <Hidden smDown>
+          {/* <Hidden smDown> */}
             <div className={classes.imageDots} />
             <img
-              src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750&q=80"
+              src='https://ifh.cc/g/eVHd7x.png'
               alt="call to action"
               className={classes.image}
             />
-          </Hidden>
+          {/* </Hidden> */}
         </Grid>
       </Grid>
       <Snackbar
