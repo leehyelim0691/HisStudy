@@ -22,25 +22,30 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import Link from '@material-ui/core/Link';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import AppFooter from './views/AppFooter';
+import AppAppBar from './views/AppAppBar';
+import Button from '@material-ui/core/Button';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 4),
-  createData('Donut', 452, 25.0, 4),
-  createData('Eclair', 262, 16.0, 6),
-  createData('Frozen yoghurt', 159, 6.0, 4),
-  createData('Gingerbread', 356, 16.0, 3),
-  createData('Honeycomb', 408, 3.2, 6),
-  createData('Ice cream sandwich', 237, 9.0, 4),
-  createData('Jelly Bean', 375, 0.0, 0),
-  createData('KitKat', 518, 26.0, 7),
-  createData('Lollipop', 392, 0.2, 0),
-  createData('Marshmallow', 318, 0, 2),
-  createData('Nougat', 360, 19.0, 37),
-  createData('Oreo', 437, 18.0, 4),
+  createData('Cupcake', '이동은', 3.7, 4),
+  createData('Donut', '이혜림', 25.0, 4),
+  createData('Eclair', '강하림', 16.0, 6),
+  createData('Frozen yoghurt', '박성희', 6.0, 4),
+  createData('Gingerbread', '이효주', 16.0, 3),
+  createData('Honeycomb', '박지후', 3.2, 6),
+  createData('Ice cream sandwich', '양태균', 9.0, 4),
+  createData('Jelly Bean', '송하영', 0.0, 0),
+  createData('KitKat', 'bryan', 26.0, 7),
+  createData('Lollipop', '이주영', 0.2, 0),
+  createData('Marshmallow', '남종운', 0, 2),
+  createData('Nougat', '박세빈', 19.0, 37),
+  createData('Oreo', '최지훈', 18.0, 4),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -83,6 +88,7 @@ function EnhancedTableHead(props) {
   };
 
   return (
+    
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
@@ -164,22 +170,26 @@ const EnhancedTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+        <Typography className={classes.title} variant="h4" id="tableTitle" component="div">
          게시판
         </Typography>
       )}
 
       {numSelected > 0 ? (
-        <Tooltip title="Delete">
+        <Tooltip title="글 삭제하기">
           <IconButton aria-label="delete">
             <DeleteIcon />
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
-          <IconButton aria-label="filter list">
-            <FilterListIcon />
+        <Tooltip title="새 게시글 쓰기">
+           <Button href= '/bbs2'>
+           <IconButton aria-label="filter list">
+            <AddBoxIcon />
           </IconButton>
+           </Button>
+           
+           
         </Tooltip>
       )}
     </Toolbar>
@@ -276,6 +286,8 @@ function Bbs() {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
+    <React.Fragment>
+    <AppAppBar />
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -351,6 +363,8 @@ function Bbs() {
         label="Dense padding"
       />
     </div>
+    <AppFooter />
+    </React.Fragment>
   );
 }
 export default withRoot(Bbs);
