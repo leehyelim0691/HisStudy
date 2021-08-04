@@ -3,9 +3,14 @@ import withRoot from './withRoot';
 import React from 'react';
 import './style.css';
 
-
+<head>
+    <title>
+        게시판
+    </title>
+</head>
 const Bbs = props => {
   return (
+    
     <div class="board_list_wrap">
             <div class="board_list">    
                 <div class="board_list_head">
