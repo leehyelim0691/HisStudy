@@ -13,6 +13,8 @@ import { email, required } from './form/validation';
 import RFTextField from './form/RFTextField';
 import FormButton from './form/FormButton';
 import FormFeedback from './form/FormFeedback';
+import { amber, purple, blueGrey } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -21,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(2),
+    backgroundColor : blueGrey[700]
   },
   feedback: {
     marginTop: theme.spacing(2),
@@ -32,7 +35,7 @@ function SignUp() {
   const [sent, setSent] = React.useState(false);
 
   const validate = (values) => {
-    const errors = required(['firstName', 'lastName', 'email', 'password'], values);
+    const errors = required(['studentid','firstname', 'lastname', 'email', 'password'], values);
 
     if (!errors.email) {
       const emailError = email(values.email, values);
@@ -57,7 +60,7 @@ function SignUp() {
             Sign Up
           </Typography>
           <Typography variant="body2" align="center">
-            <Link href="/premium-themes/onepirate/sign-in/" underline="always">
+            <Link href="/signin" underline="always">
               Already have an account?
             </Link>
           </Typography>
@@ -73,7 +76,7 @@ function SignUp() {
                     autoComplete="fname"
                     fullWidth
                     label="First name"
-                    name="firstName"
+                    name="firstname"
                     required
                   />
                 </Grid>
@@ -83,11 +86,21 @@ function SignUp() {
                     autoComplete="lname"
                     fullWidth
                     label="Last name"
-                    name="lastName"
+                    name="lastname"
                     required
                   />
                 </Grid>
               </Grid>
+              <Field
+                autoComplete="studentid"
+                component={RFTextField}
+                disabled={submitting || sent}
+                fullWidth
+                label="StudentID"
+                margin="normal"
+                name="studentid"
+                required
+              />
               <Field
                 autoComplete="email"
                 component={RFTextField}
@@ -109,6 +122,29 @@ function SignUp() {
                 type="password"
                 margin="normal"
               />
+              {/* 라디오 버튼 */}
+              <Field
+                autoComplete="gender"
+                component={RFTextField}
+                disabled={submitting || sent}
+                fullWidth
+                label="Gender"
+                margin="normal"
+                name="gender"
+                required
+              />
+              {/* 선택 가능하게. */}
+              <Field
+                autoComplete="major"
+                component={RFTextField}
+                disabled={submitting || sent}
+                fullWidth
+                label="Major"
+                margin="normal"
+                name="major"
+                required
+              />
+              
               <FormSpy subscription={{ submitError: true }}>
                 {({ submitError }) =>
                   submitError ? (
@@ -121,7 +157,6 @@ function SignUp() {
               <FormButton
                 className={classes.button}
                 disabled={submitting || sent}
-                color="secondary"
                 fullWidth
               >
                 {submitting || sent ? 'In progress…' : 'Sign Up'}

@@ -12,6 +12,8 @@ import { email, required } from './form/validation';
 import RFTextField from './form/RFTextField';
 import FormButton from './form/FormButton';
 import FormFeedback from './form/FormFeedback';
+import { amber, purple, blueGrey } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -20,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(2),
+    backgroundColor : blueGrey[700]
   },
   feedback: {
     marginTop: theme.spacing(2),
@@ -102,7 +105,6 @@ function SignIn() {
                 className={classes.button}
                 disabled={submitting || sent}
                 size="large"
-                color="secondary"
                 fullWidth
               >
                 {submitting || sent ? 'In progress…' : 'Sign In'}

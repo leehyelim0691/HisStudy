@@ -45,13 +45,36 @@ function App() {
 
     <Router>
       <div className="App">
+      <Route path="/" exact>
         <AppAppBar/>
+          <Switch>
+            <Route path="/bbs">
+              <Bbs/>
+            </Route>
+            <Route path="/signin">
+              <SignIn/>
+            </Route>
+            <Route path="/signup">
+              <SignUp/>
+                <Switch>
+                  <Route path="/signin">
+                    <SignIn/>
+                  </Route>
+                </Switch>
+            </Route>
+          </Switch>
+        </Route>
         <Switch>
           <Route path="/" exact>
             <MainPage/>
             <Switch>
                 <Route path="/signup">
                   <SignUp/>
+                    <Switch>
+                      <Route path="/signin">
+                        <SignIn/>
+                      </Route>
+                    </Switch>
                 </Route>
               </Switch>
             <MainFunction />
@@ -71,6 +94,11 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp/>
+              <Switch>
+                <Route path="/signin">
+                  <SignIn/>
+                </Route>
+              </Switch>
           </Route>
           <Route path="/bbs">
             <Bbs/>
