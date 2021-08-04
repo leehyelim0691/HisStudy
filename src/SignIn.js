@@ -16,6 +16,11 @@ import { amber, purple, blueGrey } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
+  typo: {
+    // variant :"h3" 
+    // gutterBottom marked : "center" 
+    // align="center"
+  },
   form: {
     marginTop: theme.spacing(6),
   },
@@ -55,7 +60,7 @@ function SignIn() {
       <AppAppBar />
       <AppForm>
         <React.Fragment>
-          <Typography variant="h3" gutterBottom marked="center" align="center">
+          <Typography className={classes.typo} variant ="h3" gutterBottom marked = "center" align="center">
             Sign In
           </Typography>
           <Typography variant="body2" align="center">

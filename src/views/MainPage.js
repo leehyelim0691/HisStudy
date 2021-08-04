@@ -12,6 +12,17 @@ import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles
 
 const backgroundImage = 'https://ifh.cc/g/bb9DS0.jpg';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: '#f44336',
+    },
+  },
+});
+
 const styles = (theme) => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,

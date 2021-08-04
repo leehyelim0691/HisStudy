@@ -130,8 +130,8 @@ function AppAppBar(props) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {["Board", "Starred", "Send email", "Drafts"].map((text, index) => (
+      {/* <List>
+        {["Board", "Ranking", "Chatting"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? 
@@ -140,25 +140,55 @@ function AppAppBar(props) {
               </Button>
               : 
               <MailIcon />}
-              
-
-
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
-      <Divider />
+      </List> */}
+
       <List>
+          <ListItem button key={'Board'} >
+          <Button href= '/bbs'>
+            <ListItemIcon>
+                <i class="fas fa-clipboard-list" ></i> 
+            </ListItemIcon>
+            <ListItemText primary={'Board'} />
+            </Button>
+          </ListItem>
+      </List>
+
+      <List>
+          <ListItem button key={'Ranking'} >
+          <Button href= '/bbs'>
+            <ListItemIcon>
+                <i class="fas fa-clipboard-list" ></i> 
+            </ListItemIcon>
+            <ListItemText primary={'Ranking'} />
+            </Button>
+          </ListItem>
+      </List>
+
+      {/* <List>
+          <ListItem button key={'Ranking'}>
+            <ListItemIcon>
+              <Button href="/ranking">
+                <i class="fas fa-clipboard-list" ></i> 
+              </Button>
+            </ListItemIcon>
+            <ListItemText primary={'Ranking'} />
+          </ListItem>
+      </List> */}
+      <Divider />
+      {/* <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>
+            <ListItemIcon>/
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </div>
   );
 
@@ -236,11 +266,18 @@ function AppAppBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-              <Button href="/signin">
+              {/* <Button href="/signin">
                <MenuItem onClick={handleClose}>Sign In</MenuItem>
               </Button>
               <Button href="/signup">
                <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+              </Button> */}
+
+              <Button href="/signin">
+               <MenuItem onClick={handleClose}>21800607</MenuItem>
+              </Button>
+              <Button href="/signup">
+               <MenuItem onClick={handleClose}>Sign Out</MenuItem>
               </Button>
                 
                 {/* <MenuItem href="/signup" onClick={handleClose}>Sign Up</MenuItem> */}
@@ -250,54 +287,6 @@ function AppAppBar(props) {
         </Toolbar>
       </AppBar>
     </div>
-
-
-
-    // <div>
-    //   <AppBar position="fixed">
-    //     <Toolbar className={classes.toolbar}>
-    //       <div className={classes.left} />
-    //       <Link
-    //         variant="h6"
-    //         underline="none"
-    //         color="inherit"
-    //         className={classes.title}
-    //         href="/"
-    //       >
-    //         {'HisStudy'}
-    //       </Link>
-    //       <div className={classes.right}>
-    //         <Link
-    //           color="inherit"
-    //           variant="h6"
-    //           underline="none"
-    //           className={classes.rightLink}
-    //           href="/signin"
-    //         >
-         
-    //           {'Sign In'}
-    //         </Link>
-    //         <Link
-    //           variant="h6"
-    //           underline="none"
-    //           className={classes.rightLink}
-    //           href="/signup"
-    //         >
-    //           {'Sign Up'}
-    //         </Link>
-    //         <Link
-    //           variant="h6"
-    //           underline="none"
-    //           className={clsx(classes.rightLink, classes.linkSecondary)}
-    //           href="/bbs"
-    //         >
-    //           {'Board'}
-    //         </Link>
-    //       </div>
-    //     </Toolbar>
-    //   </AppBar>
-    //   <div className={classes.placeholder} />
-    // </div>
   );
 }
 
