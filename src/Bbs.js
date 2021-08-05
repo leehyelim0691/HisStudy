@@ -22,6 +22,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import AppFooter from './views/AppFooter';
+import AppAppBar from './views/AppAppBar';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -276,6 +278,8 @@ function Bbs() {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
+    <React.Fragment>
+      <AppAppBar />
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -351,6 +355,8 @@ function Bbs() {
         label="Dense padding"
       />
     </div>
+    <AppFooter />
+    </React.Fragment>
   );
 }
 export default withRoot(Bbs);
