@@ -82,7 +82,7 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         component="a"
-        href="/signup"
+        href="/signin"
       >
         Start
       </ColorButton>

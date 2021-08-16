@@ -273,7 +273,7 @@ function AppAppBar(props) {
                <MenuItem onClick={handleClose}>Sign Up</MenuItem>
               </Button> */}
 
-              <Button href="/signin">
+              <Button href="/mypage">
                <MenuItem onClick={handleClose}>21800607</MenuItem>
               </Button>
               <Button href="/signup">

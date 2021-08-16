@@ -1,21 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import './css/styles.css';
-// import './css/bootstrap-theme.css';
-// import './css/bootstrap-theme.css.map';
-// import './css/bootstrap-theme.min.css';
-// import './css/bootstrap.css';
-// import './css/bootstrap.css.map';
-// import './css/bootstrap.min.css';
-// import Main from "./pages/main.js";
-// import Bbs from "./pages/bbs.js";
-// import {
-//   Route,
-//   Switch,
-//   Redirect,
-//   BrowserRouter as Router
-// } from "react-router-dom";
-
 import withRoot from './withRoot';
 // --- Post bootstrap -----
 import React from 'react';
@@ -30,6 +12,7 @@ import AppAppBar from './views/AppAppBar';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Bbs from './Bbs';
+import Writebbs from './Writebbs';
 import Terms from './Terms';
 import {
   Route,
@@ -48,6 +31,9 @@ function App() {
       <Route path="/" exact>
         <AppAppBar/>
           <Switch>
+          <Route path="/write">
+              <Writebbs/>
+            </Route>
             <Route path="/bbs">
               <Bbs/>
             </Route>
@@ -102,6 +88,9 @@ function App() {
           </Route>
           <Route path="/bbs">
             <Bbs/>
+          </Route>
+          <Route path="/write">
+            <Writebbs/>
           </Route>
         </Switch>
         </div> 
